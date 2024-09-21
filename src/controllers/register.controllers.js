@@ -3,10 +3,10 @@ const reg_controller = async(req,res)=>{
     try {
 
        
-        let {email }= req.body
-        const checkmail = await register.findOne({email})
+        let {Email }= req.body
+        const checkmail = await register.findOne({Email})
         if(checkmail){
-            return res.status(409).json("email already exists....!!") 
+            return res.status(409).json("Email already exists....!!") 
         }
         let createUser = await  register.create(req.body)
         res.json({
@@ -17,7 +17,7 @@ const reg_controller = async(req,res)=>{
     } catch (error) {
 
         res.json({
-            Error: error
+            Error: error.message
           });  
     }
 }

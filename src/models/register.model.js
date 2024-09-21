@@ -9,14 +9,13 @@ const regSchema = new mongoose.Schema({
         type:String,
         unique:true,
         match: /@(gmail|outlook)\.com$/i
-            // errorMessage: 'you may only use email addresses from gmail or outlook'
-          
     },
     PhoneNum:{
         type:Number,
         required:true,
         unique:true,
-        match: /^(\\([0-9]{3}\\))?[0-9]{3}-[0-9]{4}$/    },
+        match: /^(\\([0-9]{3}\\))?[0-9]{3}-[0-9]{4}$/   
+     },
     created: {
         type: Date, 
         default: Date.now 
