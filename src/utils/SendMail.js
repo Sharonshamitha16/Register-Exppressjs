@@ -11,7 +11,7 @@ const mailSend = async (Email, userName, password) => {
         const transporter = await nodemailer.createTransport({
             service: "gmail",
             auth: {
-                use: "sharonshamitha16@gmail.com",
+                user: process.env.EMAIL_ID,
                 pass: process.env.PASS_KEY,
             },
             tls:{

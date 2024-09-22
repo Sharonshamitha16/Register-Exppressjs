@@ -15,7 +15,9 @@ npm i mongoose
 npm i bcrypt
 
 npm i uuid
- npm i nodemailer
+npm i nodemailer
+
+npm i jsonwebtoken
 
 
 
@@ -61,10 +63,10 @@ controller.js - 1) importing the model from the model.js path and storing in a v
                 9)port assigned
                 10)server running statement in arrow function 
                 11)app.use('/', (req,res)) res.send server alive
+utlis 
+    --sendMail  1)import nodemailer 
+    {through gmail}
 
 
 
 
-
-npm i bcrypt 
-npm i nodemailer
