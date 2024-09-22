@@ -2,21 +2,26 @@ const mongoose = require("mongoose")
 const regSchema = new mongoose.Schema({
     userName: {
         type: String,
-        required: true
+        required: true,
+        trim:true
     },
     Email:{
-        required:true,
+        required:[true, 'email is required..'],
         type:String,
         unique:true,
-        match: /@(gmail|outlook)\.com$/i
+        match: [/@(gmail|outlook|ymail)\.com(\.(in|org|net|uk))?$/i, 'Please provide a proper email'],
+        trim:true
+
+        
     },
     PhoneNum:{
         type:Number,
-        required:true,
+        required:[true, 'email is required..'],
         unique:true,
-        match: /^(\\([0-9]{3}\\))?[0-9]{3}-[0-9]{4}$/   
+        match: /^(\\([0-9]{3}\\))?[0-9]{3}-[0-9]{4}$/,
+        trim:true   
      },
-    created: {
+    dob: {
         type: Date, 
         default: Date.now 
     },
@@ -33,6 +38,12 @@ const regSchema = new mongoose.Schema({
 		type: Boolean,
 		default: true,
 	},
+    password:{
+        type:String
+    },
+    created:{
+        type:String
+    }
 },{ timestamps: true });
 
 const register_model = mongoose.model("blog_register",regSchema )
