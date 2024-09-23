@@ -1,18 +1,25 @@
 const mongoose = require("mongoose")
+const {v4} =require("uuid")
 const regSchema = new mongoose.Schema({
     userName: {
         type: String,
         required: true,
         trim:true
     },
+    _id:{
+        type:String,
+        default:v4
+    },
+    userId:{
+        type:String,
+       default:v4
+    },
     Email:{
         required:[true, 'email is required..'],
         type:String,
         unique:true,
         match: [/@(gmail|outlook|ymail)\.com(\.(in|org|net|uk))?$/i, 'Please provide a proper email'],
-        trim:true
-
-        
+        trim:true 
     },
     PhoneNum:{
         type:Number,
